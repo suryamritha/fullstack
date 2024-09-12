@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Internal Stylesheet */
+        #login-form {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 50px auto;
+            width: 350px;
+            padding: 20px;
+            background-color: #ddc0d6; /* Light grey background */
+            border-radius: 10px;
+            border: 2px solid #580244; /* Border color */
+        }
+        #login-form input {
+            display: block;
+            margin: 15px 0;
+            padding: 10px;
+            width: calc(100% - 22px); /* Adjusted width to fit within the container */
+            border-radius: 5px;
+            border: 1px solid #3c1c1c;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            background-color: #2980b9; /* Blue for buttons */
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none; /* Remove underline */
+            display: block; /* Make it block-level */
+            border: none; /* Remove default button border */
+        }
+        .btn:hover {
+            background-color: #29455a; /* Darker blue on hover */
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <section id="login-form">
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <span id="passwordError" class="error"></span> <!-- Error message for password -->
+            <button type="submit" class="btn">Login</button> <!-- Submit button for form -->
+        </form>
+    </section>
+
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Function to check if user is already logged in
+        function checkLoginStatus() {
+            var loggedIn = getCookie('loggedIn');
+            if (loggedIn) {
+                // Redirect to dashboard.html if already logged in
+                window.location.href = 'dashboard.html';
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var passwordError = document.getElementById('passwordError');
+
+            // Clear previous error message
+            passwordError.textContent = '';
+
+            // Basic validation for password length and number inclusion
+            var isValid = true;
+
+            if (password.length < 8) {
+                passwordError.textContent = 'Password must be at least 8 characters long.';
+                isValid = false;
+            } else if (!/\d/.test(password)) {
+                passwordError.textContent = 'Password must contain at least one number.';
+                isValid = false;
+            }
+
+            // Check username and password validity
+            if (username === 'Suryamritha' && password === '12345678') {
+                if (isValid) {
+                    // Set cookie for logged-in state
+                    setCookie('loggedIn', 'true', 1); // Cookie expires in 1 day
+
+                    // Redirect to dashboard.html if credentials are correct
+                    window.location.href = 'dashboard.html';
+                }
+            } else {
+                // Redirect to dashboard2.html for invalid credentials
+                window.location.href = 'dashboard2.html';
+            }
+        });
+
+        // Check login status on page load
+        checkLoginStatus();
+    </script>
+</body>
+</html>

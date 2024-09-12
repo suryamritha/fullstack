@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css"> <!-- External stylesheet -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Internal stylesheet for font types and colors */
+        #main-heading {
+            font-family: 'Arial', sans-serif;
+            color: #d6a1ca;
+        }
+
+        .section-title {
+            color: #580244;
+            margin-bottom: 10px; /* Adjusted margin */
+            padding-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .text-color {
+            color: #333; /* Example class for font color */
+        }
+
+        /* Navigation menu */
+        nav {
+            background-color: #580244;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f3dcee;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        #gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #gallery img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#academic-details">Academic Details</a>
+        <a href="#projects">Projects</a>
+        <a href="#personal">Personal Details</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+
+    <header>
+        <h1 id="main-heading">Welcome to My Dashboard!</h1>
+    </header>
+    
+    <main id="dashboard">
+        <section class="section" id="academic-details" style="font-family: 'Arial', sans-serif;">
+            <h2 class="section-title">Academic Details</h2>
+            <p class="text-color"><strong>Degree:</strong> BTech in CSE AI</p>
+            <p class="text-color"><strong>University:</strong> Amrita Vishwa Vidyapeetham</p>
+            <p class="text-color"><strong>Graduation Year:</strong> 2025</p>
+            <p class="text-color"><strong>CGPA:</strong> 9.02/10</p>
+        </section>
+
+        <section class="section" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <ul>
+                <li><strong>Emotion Categorization on Multiclass Textual Data:</strong> <a href="https://github.com/suryamritha/-Emotion-Categorization-on-Multiclass-Textual-Data" target="_blank">GitHub Repository</a></li>
+                <li><strong>E-Commerce-Data-Analysis:</strong> <a href="https://github.com/suryamritha/E-Commerce-Data-Analysis" target="_blank">GitHub Repository</a></li>
+                <li><strong>Speaker Identification:</strong> <a href="https://github.com/suryamritha/Speaker-Identification-" target="_blank">GitHub Repository</a></li>
+            </ul>
+        </section>
+
+        <section class="section" id="personal">
+            <h2 class="section-title">Personal Details</h2>
+            <p class="text-color"><strong>Email ID:</strong> suryamritha.manoj@gmail.com</p>
+            <p class="text-color"><strong>Location:</strong> Bangalore</p>
+            <p class="text-color"><strong>Hobbies:</strong> Dancing, Reading, Traveling, Coding</p>
+        </section>
+
+        <section class="section" id="gallery">
+            <h2 class="section-title">Gallery</h2>
+            <p>Photos of achievements and events:</p>
+            <img src="c1.png" alt="Achievement 1">
+            <img src="CERTIFICATE.jpg" alt="Achievement 2">
+            <img src="c3.png" alt="Achievement 3">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Suryamritha</p>
+    </footer>
+</body>
+</html>

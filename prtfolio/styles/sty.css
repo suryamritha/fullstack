@@ -1,0 +1,105 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background-image: url('../bg.jfif'); 
+  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* To-Do Container */
+.todo-container {
+ 
+  background-color: white; /* Fallback color */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input Fields */
+#task-input, #task-date {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#task-input {
+  margin-bottom: 5px;
+}
+
+/* Buttons */
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}
+
+/* Task List */
+#task-list {
+  margin: 20px 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* Filters */
+button#filter-all,
+button#filter-active,
+button#filter-completed {
+  background-color: #9fbad5;
+  border: 1px solid #f3c7c7;
+}
+
+button#filter-all.active,
+button#filter-active.active,
+button#filter-completed.active {
+  background-color: #007BFF;
+  color: rgb(64, 13, 13);
+  border-color: #007BFF;
+}

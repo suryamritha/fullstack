@@ -1,0 +1,45 @@
+/* External Stylesheet */
+
+/* Background and font color settings */
+body {
+  background-color: #f8c8dc; /* Light pink background */
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #2c3e50; /* Darker text color */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  padding: 30px;
+  background-color: #660549; /* Dark brown color */
+  color: rgb(216, 152, 230);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Navigation menu styling */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  background-color: #2980b9;
+  margin-bottom: 30px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: rgb(162, 19, 19);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
